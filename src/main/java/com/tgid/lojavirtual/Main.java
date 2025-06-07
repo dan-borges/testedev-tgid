@@ -1,17 +1,23 @@
-package org.example;
+package com.tgid.lojavirtual;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import com.tgid.lojavirtual.model.Produto;
+import com.tgid.lojavirtual.model.Usuario;
+import com.tgid.lojavirtual.service.LojaService;
+import com.tgid.lojavirtual.util.SimuladorBanco;
+
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        List<Usuario> usuarios = SimuladorBanco.criarUsuarios();
+        List<Produto> produtos = SimuladorBanco.criarProdutos();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        LojaService loja = new LojaService();
+
+        loja.realizarVenda(usuarios.get(0), produtos.get(0), 2); // Ana compra 2 Camisas
+        loja.realizarVenda(usuarios.get(1), produtos.get(1), 1); // Carlos compra 1 Calça
+        loja.realizarVenda(usuarios.get(1), produtos.get(2), 1); // Carlos compra 1 Tênis
+
+        loja.exibirResumo(produtos);
     }
 }
