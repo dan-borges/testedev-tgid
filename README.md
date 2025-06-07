@@ -18,7 +18,9 @@ Além disso, os dados foram simulados em memória para representar um banco de d
 
 
 
-## 🔄 Exemplo de saída pelo Main.java utilizando os dados mockados
+## ↪ Exemplo de saída pelo Main.java utilizando os dados mockados
+
+```
 =========================
 Cliente: Carlos
 Data: 07/06/2025
@@ -31,3 +33,4 @@ Total: R$200.0
 Camisa - R$100.0 (Estoque: 3)
 Calça - R$140.0 (Estoque: 5)
 Tênis - R$200.0 (Estoque: 2)
+```
